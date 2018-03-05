@@ -81,6 +81,17 @@ public class ChooseAreaFragment extends Fragment {
                 }
             }
         });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (currentLevel == LEVEL_COUNTY) {
+                    queryCities();
+                } else if (currentLevel == LEVEL_CITY) {
+                    queryProvinces();
+                }
+            }
+        });
         queryProvinces();
     }
 
